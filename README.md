@@ -22,11 +22,8 @@ $ sh /path/to/delete.sh
 
 ## option
 
-`-a` オプションを付けると対象に不可視ファイルを含めます。
-
-```bash
-$ sh /path/to/delete.sh -a
-```
+- `-a` オプションを付けると対象に不可視ファイルを含めます。
+- `-p` オプションを付けると選択ツールを`cho`から`peco`へ変更します。
 
 ## alias
 
@@ -34,6 +31,11 @@ $ sh /path/to/delete.sh -a
 alias d="sh /path/to/delete.sh"
 alias d.="sh /path/to/delete.sh -a"
 ```
+
+# REQUIREMENT
+
+- [cho](https://github.com/mattn/cho)
+- [peco](https://github.com/peco/peco)
 
 # LICENSE
 
