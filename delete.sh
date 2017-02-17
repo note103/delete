@@ -5,15 +5,13 @@ datetime=$(date +%Y-%m-%d-%H-%M-%S)
 
 path=$(pwd)
 
-if [[ $1 == "-p" ]] || [[ $2 == "-p" ]] ; then
+selector="cho"
+if [[ $1 =~ p ]] || [[ $2 =~ p ]] ; then
     selector="peco"
-else
-    selector="cho"
 fi
-if [[ $1 == "-a" ]] || [[ $2 == "-a" ]] ; then
+opt=""
+if [[ $1 =~ a ]] || [[ $2 =~ a ]] ; then
     opt="-a"
-else
-    opt=""
 fi
 
 ls=$(ls -F $opt)

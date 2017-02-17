@@ -12,7 +12,7 @@ delete.sh - Delete a file or a directory through the pull-down menu.
 
 # Installation
 
-1) Download a repogitory or the script 'delete.sh'.
+1) Download a repogitory or the script `delete.sh`.
 
 2) Run a script.
 
@@ -22,16 +22,16 @@ $ sh /path/to/delete.sh
 
 ## option
 
-- `-a` オプションを付けると対象に不可視ファイルを含めます。
-- `-p` オプションを付けると選択ツールを`cho`から`peco`へ変更します。
+- `a` オプションを付けると対象に不可視ファイルを含めます。
+- `p` オプションを付けると選択ツールを`cho`から`peco`へ変更します。
 
 ## alias (example)
 
 ```bash
 alias d="sh /path/to/delete.sh"
-alias d.="sh /path/to/delete.sh -a"
-alias dp="sh /path/to/delete.sh -p"
-alias dp.="sh /path/to/delete.sh -a -p"
+alias d.="sh /path/to/delete.sh a"
+alias dp="sh /path/to/delete.sh p"
+alias dp.="sh /path/to/delete.sh ap"
 ```
 
 # REQUIREMENT
