@@ -6,12 +6,14 @@ datetime=$(date +%Y-%m-%d-%H-%M-%S)
 path=$(pwd)
 
 selector="cho"
-if [[ $1 =~ p ]] || [[ $2 =~ p ]] ; then
-    selector="peco"
-fi
-opt=""
-if [[ $1 =~ a ]] || [[ $2 =~ a ]] ; then
-    opt="-a"
+if [[ $1 =~ - ]] || [[ $2 =~ - ]] ; then
+    if [[ $1 =~ p ]] || [[ $2 =~ p ]] ; then
+        selector="peco"
+    fi
+    opt=""
+    if [[ $1 =~ a ]] || [[ $2 =~ a ]] ; then
+        opt="-a"
+    fi
 fi
 
 ls=$(ls -F $opt)
