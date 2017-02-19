@@ -12,7 +12,7 @@ delete.sh - Delete a file or a directory through the pull-down menu.
 
 # Installation
 
-1) Download a repogitory or the script `delete.sh`.
+1) Download a repository or the script `delete.sh`.
 
 2) Run a script.
 
@@ -30,8 +30,17 @@ $ sh /path/to/delete.sh
 ```bash
 alias d="sh /path/to/delete.sh"
 alias d.="sh /path/to/delete.sh -a"
-alias dp="sh /path/to/delete.sh -p"
-alias dp.="sh /path/to/delete.sh -ap"
+alias dj="sh /path/to/delete.sh -p"
+alias dj.="sh /path/to/delete.sh -ap"
+```
+
+## trashbox
+
+デフォルトでは `$HOME/.Trash` を移動先のゴミ箱として設定しています。別の場所にカスタマイズする場合は、 `.bash_profile` に以下の記述を追加してください。
+
+```bash
+# $HOME/tmp_trash に設置する場合
+export TMPTRASH=$HOME/tmp_trash
 ```
 
 # REQUIREMENT
