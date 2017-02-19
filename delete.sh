@@ -1,7 +1,6 @@
 #!/bin/sh
 
-trashbox=~/tmp_trash;
-datetime=$(date +%Y-%m-%d-%H-%M-%S)
+trashbox=${TMPTRASH:-$HOME/.Trash}
 
 path=$(pwd)
 
@@ -18,12 +17,21 @@ fi
 
 ls=$(ls -F $opt)
 basename=$(for i in exit $ls ; do echo $i; done | $selector)
-id=$(find . -name "$dir" -maxdepth 1 |  echo "$datetime"_"$basename")
 
-if [ -e "$basename" ] ; then
-    mv "$basename" "$id"
-    mv "$id" "$trashbox/"
-    echo "$basename\t->\t$trashbox/$basename";
+if [ -e "$trashbox" ] ; then
+    if [ -e "$basename" ] ; then
+        if [ ! -e "$trashbox/$basename" ] ; then
+            mv "$basename" "$trashbox/"
+        else
+            datetime=$(date +%Y-%m-%d-%H-%M-%S)
+            id=$(find . -name "$dir" -maxdepth 1 |  echo "$datetime"_"$basename")
+            mv "$basename" "$id"
+            mv "$id" "$trashbox/"
+        fi
+        echo "$basename\t->\t$trashbox/$basename";
+    else
+        echo 'No such data.'
+    fi
 else
-    echo 'No such data.'
+    echo "No such a directory. Set the trashbox to '$trashbox'."
 fi
