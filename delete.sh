@@ -16,7 +16,7 @@ if [[ $1 =~ - ]] || [[ $2 =~ - ]] ; then
 fi
 
 ls=$(ls -F $opt)
-basename=$(for i in exit $ls ; do echo $i; done | $selector)
+basename=$(for i in exit "$ls" ; do echo "$i"; done | $selector)
 
 if [ -e "$trashbox" ] ; then
     if [ -e "$basename" ] ; then
